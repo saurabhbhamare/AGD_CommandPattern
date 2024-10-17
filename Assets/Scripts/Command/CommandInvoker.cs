@@ -12,6 +12,14 @@ namespace Command.Commands
             ExecuteCommand(commandToProcess);
             RegisterCommand(commandToProcess);
         }
+        public void Undo()
+        {
+            if (!RegistryEmpty() && CommandBelongsToActivePlayer())
+                commandRegistry.Pop().Undo();
+        }
+        private bool RegistryEmpty() => commandRegistry.Count == 0;
+
+        private bool CommandBelongsToActivePlayer() => (commandRegistry.Peek() as UnitCommand).commandData.ActorPlayerID == GameService.Instance.PlayerService.ActivePlayerID;
 
         public void ExecuteCommand(ICommand commandToExecute) => commandToExecute.Execute();
 
