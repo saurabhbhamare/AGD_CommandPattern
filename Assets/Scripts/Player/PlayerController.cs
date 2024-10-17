@@ -49,7 +49,7 @@ namespace Command.Player
         {
             if (AllUnitsUsed())
             {
-                // TODO:    Need to check here if any of the players are dead. Not only the active one.
+              
 
                 if (AllUnitsDead())
                     playerService.PlayerDied(this);
@@ -98,17 +98,17 @@ namespace Command.Player
 
             while (activeUnitIndex >= 0)
             {
-                // Check if the unit at the current index is not alive (i.e., it's defeated).
+              
                 if (!units[activeUnitIndex].IsAlive())
                 {
-                    // Move to the previous unit in the list.
+                
                     activeUnitIndex--;
                 }
                 else
                 {
-                    // Activate the next living unit in the list and start its turn.
+                  
                     units[activeUnitIndex].StartUnitTurn();
-                    break; // Exit the loop once an active unit is found.
+                    break; 
                 }
             }
         }
