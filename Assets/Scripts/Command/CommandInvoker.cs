@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Command.Commands;
 public class CommandInvoker
 {
     public Stack<ICommand> commandRegistry = new Stack<ICommand>();
