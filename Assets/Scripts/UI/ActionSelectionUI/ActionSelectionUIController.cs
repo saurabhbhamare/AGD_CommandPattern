@@ -53,7 +53,7 @@ namespace Command.UI
             }
         }
 
-        // To Learn more about Events and Observer Pattern, check out the course list here: https://outscal.com/courses
+        
         public void OnActionSelected(CommandType actionType)
         {
             GameService.Instance.EventService.OnActionSelected.InvokeEvent(actionType);
